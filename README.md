@@ -1,4 +1,4 @@
-#**Panduan Konfigurasi MikroTik untuk Jaringan Lokal dengan DHCP, NAT, Firewall, dan Manajemen Bandwidth Menggunakan AntiX Linux**
+# **Panduan Konfigurasi MikroTik untuk Jaringan Lokal dengan DHCP, NAT, Firewall, dan Manajemen Bandwidth Menggunakan AntiX Linux**
 
 ## **Soal 1: Konfigurasi IP Address dan DHCP Server**
 
