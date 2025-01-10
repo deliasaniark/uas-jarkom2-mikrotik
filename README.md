@@ -1,6 +1,4 @@
-Tentu! Berikut penjelasan yang lebih santai dan mudah dipahami:
-
----
+#**Panduan Konfigurasi MikroTik untuk Jaringan Lokal dengan DHCP, NAT, Firewall, dan Manajemen Bandwidth Menggunakan AntiX Linux**
 
 ## **Soal 1: Konfigurasi IP Address dan DHCP Server**
 
@@ -17,7 +15,7 @@ Tentu! Berikut penjelasan yang lebih santai dan mudah dipahami:
 - **AntiX VM:**
   - **Adapter 1:**  
     - Pilih *Bridged Adapter* supaya AntiX dapat terhubung langsung ke jaringan lokal yang sama dengan MikroTik.
-    - Fungsi: Agar AntiX bisa dapat IP dari MikroTik.
+    - Fungsi: Agar AntiX bisa mendapatkan IP dari MikroTik.
 
 ### **Langkah 1.2: Konfigurasi di MikroTik**
 1. **Login ke MikroTik** dan akses terminal.
@@ -55,17 +53,24 @@ Tentu! Berikut penjelasan yang lebih santai dan mudah dipahami:
      ```
 
 ### **Langkah 1.3: Pengujian DHCP**
-1. **Di AntiX, cek IP-nya** dengan perintah:
+1. **Di AntiX, lepas IP lama dan minta IP baru** dengan perintah:
+   ```bash
+   sudo dhclient -r eth0
+   sudo dhclient eth0
+   ```
+   - Perintah `sudo dhclient -r eth0` digunakan untuk melepaskan IP yang lama.
+   - Perintah `sudo dhclient eth0` digunakan untuk meminta IP baru dari MikroTik.
+
+2. **Cek IP yang diterima** di AntiX:
    ```bash
    ip a
    ```
-   Pastikan IP yang diterima di rentang **192.168.0.50 hingga 192.168.0.59**.
+   Pastikan IP yang diterima berada di rentang **192.168.0.50 hingga 192.168.0.59**.
 
-2. **Ping ke gateway MikroTik** untuk cek koneksi:
+3. **Ping ke gateway MikroTik** untuk cek koneksi:
    ```bash
    ping 192.168.0.45
    ```
-
 ---
 
 ## **Soal 2: NAT dan Internet Sharing**
@@ -157,11 +162,3 @@ Tentu! Berikut penjelasan yang lebih santai dan mudah dipahami:
    - Pastikan kecepatan download dan upload sesuai dengan yang sudah diatur di MikroTik.
 
 ---
-
-### **Ringkasan**
-1. **Soal 1:** MikroTik memberikan IP ke perangkat melalui DHCP.
-2. **Soal 2:** NAT memungkinkan perangkat mengakses internet.
-3. **Soal 3:** Firewall memblokir situs tertentu seperti Facebook.
-4. **Soal 4:** Membatasi bandwidth klien sesuai kebutuhan.
-
-Jika ada yang kurang jelas atau ingin ditambahin, beri tahu aja ya! 😊
