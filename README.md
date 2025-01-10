@@ -38,6 +38,10 @@
    ```bash
    /ip dhcp-server print
    ```
+   jika masih disable maka enable DHCP secara manual:
+   ```bash
+   /ip dhcp-server enable dhcp1
+   ```
 
 ---
 
