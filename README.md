@@ -3,7 +3,7 @@
 ### **Langkah 1: Konfigurasi IP Address pada MikroTik**
 1. **Tambahkan IP Address pada Interface yang akan digunakan untuk jaringan lokal (klien):**
    - Gunakan **ether1** untuk jaringan lokal.
-   - Tambahkan IP Address **192.168.0.45/24** pada interface **ether1**:
+   - Tambahkan IP Address **192.168.0.45/24** (45 karena NPM saya 2213020145) pada interface **ether1**:
      ```bash
      /ip address add address=192.168.0.45/24 interface=ether1
      ```
